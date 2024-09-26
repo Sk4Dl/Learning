@@ -9,18 +9,9 @@ description: Just a blog for learning something about deep learning.
 # Author Settings
 author:
   name: Sk4Dl
-  image: 01.jpg
+  image: 1.jpg
   say-hello: Hello, I’m <strong>Sk4Dl</strong>
   bio: A postgraduate student of Harbin Institude of Technology, Shenzhen. A deeping learning amateur.
-
-
-#-------------------------------
-# Contact links
-twitter: / # Add your Twitter handle
-facebook: / # Add your Facebook handle
-dribbble: / # Add your Dribbble handle
-instagram: / # Add your Instagram handle
-pinterest: / # Add your Pinterest handle
 
 
 #-------------------------------
