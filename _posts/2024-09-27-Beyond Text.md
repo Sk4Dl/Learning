@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Beyond Text"
-date:   2024-09-26 10:22:25 +0800
+date:   2024-09-27 10:22:25 +0800
 image:  Beyond Text.png
 tags:   Vector Quantization
 ---
