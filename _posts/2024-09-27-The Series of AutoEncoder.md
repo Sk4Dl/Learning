@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The Series of AutoEncoder"
-date:   2024-09-26 00:23:23 +0800
+date:   2024-09-27 00:23:23 +0800
 image:  AutoEncoder.png
 tags:   Vector Quantization
 ---
