@@ -8,7 +8,7 @@ tags:   Vector_Quantization
 >  Contributions
 
 + FSQ can serve as a replacement for VQ in various architectures, for different datasets and tasks. There is a reduction of only $0.5 - 3\%$ in the respective metrics, and FSQ correspondingly get highlty similar visual results.
-+ FSQ is able to leverage large codebooks for better reconstruction metrics, and better sample quality. The codebook usage is very high for FSQ ($\approx100%$​ for most models), without relying on any auxiliary losses. Besides, the dimension of FSQ is much smaller than VQ (typically d < 10 for FSQ, but d ≥ 512 for VQ).
++ FSQ is able to leverage large codebooks for better reconstruction metrics, and better sample quality. The codebook usage is very high for FSQ ($\approx100\%$​ for most models), without relying on any auxiliary losses. Besides, the dimension of FSQ is much smaller than VQ (typically d < 10 for FSQ, but d ≥ 512 for VQ).
 
 > Method
 
