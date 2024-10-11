@@ -15,7 +15,7 @@
 
 + **Discrete Latent variables.** Author defines a latent embedding space $e \in R^{K\times D}$ where $K$ is the size of the discrete latent space, and $D$ is the dimensionality of each latent embedding vector $e_i$. Thus, there are $K$ embedding vectors $e_i \in R^D, i \in \\\{1,2,...,K\\\}$​.
 
-  ![VQ-VAE](C:\Users\Administrator\Desktop\VQ-VAE.png)
+  ![VQ-VAE](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/VQ-VAE.png)
 
 + **Forward Process.** VQ-VAE takes an input $x$, that is passed through an encoder producing output $z_e(x)$. The discrete latent variables $z$ are then calculated by a nearest neighbour look-up using the shared embedding space $e$ as shown in the following equation
   $$
