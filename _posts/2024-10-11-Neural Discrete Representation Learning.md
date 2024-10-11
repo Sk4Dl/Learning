@@ -26,7 +26,7 @@ tags:   Vector_Quantization
   $$
   q(z=k\|x)=\left\{
   \begin{aligned}
-  1, &\text { for k}=argmin_j\\\|z_e(x)-e_j\\\|_2\\\\
+  1, &\text { for k}=argmin_j\|z_e(x)-e_j\|_2\\
   0, &\text { otherwize}
   \end{aligned}
   \right.
@@ -35,7 +35,7 @@ tags:   Vector_Quantization
 
   The representation $z_e(x)$ is passed through the discretisation bottleneck followed by mapping onto the nearest element of embedding $e$
   $$
-  z_q(x)=e_k, \text{where }k=argmin_j\\\|z_e(x)-e_j\\\|_2
+  z_q(x)=e_k, \text{where }k=argmin_j\|z_e(x)-e_j\|_2
   $$
   The input to the decoder is the corresponding embedding matrix $z_q(x)$​. One can see this forward computation pipeline as a regular autoencoder with a particular non-linearity that maps the latents to 1-of-K embedding vectors.
 
@@ -43,7 +43,7 @@ tags:   Vector_Quantization
 
   The following equation specifies the overall loss function
   $$
-  L=log p(x\|z_q(x))+\\\|sg[z_e(x)]-e\\\|_2^2+\beta \\\|z_e(x)-sg[e]\\\|^2_2
+  L=log p(x\|z_q(x))+\|sg[z_e(x)]-e\|_2^2+\beta \|z_e(x)-sg[e]\|^2_2
   $$
   where sg stand for the stopgradient operator and has zero partial derivatives.
 
