@@ -1,4 +1,9 @@
-### Neural Discrete Representation Learning
+---
+layout: post
+title:  "Neural Discrete Representation Learning"
+date:   2024-10-11 16:22:00 +0800
+tags:   Vector_Quantization
+---
 
 > Contributions
 
