@@ -36,9 +36,11 @@ tags:   Vector_Quantization
   where $z_e(x)$ is the output of the encoder network.
 
   The representation $z_e(x)$ is passed through the discretisation bottleneck followed by mapping onto the nearest element of embedding $e$
+  
   $$
   z_q(x)=e_k, \text{where }k=argmin_j\|z_e(x)-e_j\|_2
   $$
+  
   The input to the decoder is the corresponding embedding matrix $z_q(x)$​. One can see this forward computation pipeline as a regular autoencoder with a particular non-linearity that maps the latents to 1-of-K embedding vectors.
 
 + **Backward Process.** There is no real gradient defined in the quantization module. However, author approximate the gradient similar to the straight-through estimator and just copy gradients from decoder input $z_q(x)$ to encoder output $z_e(x)$. Since the output representation of the encoder and the input to the decoder share the same $D$​ dimensional space, the gradients contain useful information for how the encoder has to change its output to lower the reconstruction loss.
