@@ -23,14 +23,16 @@ tags:   Vector_Quantization
   ![VQ-VAE](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/VQ-VAE.png)
 
 + **Forward Process.** VQ-VAE takes an input $x$, that is passed through an encoder producing output $z_e(x)$. The discrete latent variables $z$ are then calculated by a nearest neighbour look-up using the shared embedding space $e$ as shown in the following equation
+
   $$
-  q(z=k\|x)=\left\{
+  q(z=k|x)=\left\{
   \begin{aligned}
   1, &\text { for k}=argmin_j\|z_e(x)-e_j\|_2\\
   0, &\text { otherwize}
   \end{aligned}
   \right.
   $$
+
   where $z_e(x)$ is the output of the encoder network.
 
   The representation $z_e(x)$ is passed through the discretisation bottleneck followed by mapping onto the nearest element of embedding $e$
@@ -42,9 +44,11 @@ tags:   Vector_Quantization
 + **Backward Process.** There is no real gradient defined in the quantization module. However, author approximate the gradient similar to the straight-through estimator and just copy gradients from decoder input $z_q(x)$ to encoder output $z_e(x)$. Since the output representation of the encoder and the input to the decoder share the same $D$​ dimensional space, the gradients contain useful information for how the encoder has to change its output to lower the reconstruction loss.
 
   The following equation specifies the overall loss function
+  
   $$
-  L=log p(x\|z_q(x))+\|sg[z_e(x)]-e\|_2^2+\beta \|z_e(x)-sg[e]\|^2_2
+  L=log p(x|z_q(x))+\|sg[z_e(x)]-e\|_2^2+\beta \|z_e(x)-sg[e]\|^2_2
   $$
+  
   where sg stand for the stopgradient operator and has zero partial derivatives.
 
   There are three components that are used to train different parts of VQ-VAE. The first term is the reconstruction loss which optimizes the decoder and the encoder. Due to the straight-through gradient estimation of mapping from $z_e(x)$ to $z_q(x)$, the embeddings $e_i$ receive no gradients from the reconstruction loss $logp(z\|z_q(x))$. Therefore, in order to learn the embedding space, the author uses the $l_2$ error to move the embedding vectors $e_i$ towards the encoder outputs $z_e(x)$ as shown in the second term of equation. Finally, since the volume of the embedding space is dimensionless, it can grow arbitrarily if the embeddings ei do not train as fast as the encoder parameters. To encourage the output of encoder to stay close to the chosen codebook vector to prevent it from flucturating too frequently from one code vector to another, author add a commitment loss, the third term in equation.
