@@ -1,4 +1,9 @@
-### Taming Transformers for High-Resolution Image Synthesis
+---
+layout: post
+title:  "Taming Transformers for High-Resolution Image Synthesis"
+date:   2024-10-15 17:33:00 +0800
+tags:   Vector_Quantization
+---
 
 > Contribution
 
