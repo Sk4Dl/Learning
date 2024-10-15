@@ -10,7 +10,7 @@ tags:   Vector_Quantization
 + Using CNNS to learn a context-rich vocabulary of image constituents.
 + Utilizing transformers to efficiently model their composition within high-resolution images.
 
-> Learning an Effective Codebook of Image Constituents for Use in Transformers
+> Learning an Effective Codebook of Image Constituents
 
 ![VQGAN_summarized](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/VQGAN_summarized.png)
 
@@ -22,7 +22,7 @@ tags:   Vector_Quantization
 
 
     $$
-    z_q=q(\hat z)\coloneqq \left(\mathop{\arg\min}\limits_{z_k\in \mathcal Z}\|\hat z_{i,j}-z_k\|\right)\in \mathbb R^{h\times w\times n_z}
+    z_q=q(\hat z):= \left(\mathop{\arg\min}\limits_{z_k\in \mathcal Z}\|\hat z_{i,j}-z_k\|\right)\in \mathbb R^{h\times w\times n_z}
     $$
 
 
@@ -44,13 +44,13 @@ tags:   Vector_Quantization
   $$
 
 
-  Here, $\mathcal L_{rec}(E,G,\mathcal Z)=\|x-\hat x\|^2$ is a reconstruction loss, $sg[\cdot]$ denotes the stop-gradient operation, and $\|sg[z_q]-E(x)\|^2_2$ is the socalled "commitment loss".
+  Here, $\mathcal L_{rec}(E,G,\mathcal Z)=\\\|x-\hat x\\\|^2$ is a reconstruction loss, $sg[\cdot]$ denotes the stop-gradient operation, and $\\\|sg[z_q]-E(x)\\\|^2_2$ is the socalled "commitment loss".
   
 + **Learning a Perceptually Rich Codebook.** Author uses a discriminator and perceptual loss to keep good perceptual quality at increased compression rate. More specifically, author replace the $L_2$ loss used in VQ-VAE for $\mathcal L_{rec}$ by a perceptual loss and introduce an adversarial training procedure with a patch-based discriminator $D$​ that aims to differentiate between real and reconstructed images.
 
   
   $$
-  \mathcal L_{GAN}(\\\{E,G,\mathcal Z\\\}, D)=[logD(x)+log(1-D(\hat x))]
+  \mathcal L_{GAN}(\{E,G,\mathcal Z\}, D)=[logD(x)+log(1-D(\hat x))]
   $$
 
   
@@ -58,7 +58,7 @@ tags:   Vector_Quantization
 
   
   $$
-  \mathcal Q^*=\mathop{\arg\min}\limits_{E,G,\mathcal Z}\mathop{\max}\limits_D \mathbb E_{x\sim p(x)}\left[\mathcal L_{VQ}(E,G,\mathcal Z)+\lambda \mathcal L_{GAN}(\\\{E,G,\mathcal Z\\\},D)\right]
+  \mathcal Q^*=\mathop{\arg\min}\limits_{E,G,\mathcal Z}\mathop{\max}\limits_D \mathbb E_{x\sim p(x)}\left[\mathcal L_{VQ}(E,G,\mathcal Z)+\lambda \mathcal L_{GAN}(\{E,G,\mathcal Z\},D)\right]
   $$
 
   
