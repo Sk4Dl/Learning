@@ -7,7 +7,7 @@
 
 > Learning an Effective Codebook of Image Constituents for Use in Transformers
 
-![VQGAN_summarized](C:\Users\Administrator\Desktop\VQGAN_summarized.png)
+![VQGAN_summarized](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/VQGAN_summarized.png)
 
 + **Standard process of VQ-VAE.** Image $x\in \mathbb R^{H\times W\times 3}$ can be represented by a spatial collection of codebook entries $z_q\in \mathbb R^{h\times w\times n_z}$, where $n_z$ is the dimensionality of codes. The author learn a convolutional model consisting of encoder $E$ and a decoder $G$, such that taken together, they learn to represent images with codes from a learned, discrete codebook $\mathcal Z=\{z_k\}^K_{k=1} \subset \mathbb R^{n_z}$.
 
