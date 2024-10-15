@@ -74,7 +74,7 @@ tags:   Vector_Quantization
 
 > Learning the Composition of Images with Transformers
 
-+ **Latent Transformers.** With $E$ and $G$ available, we can now represent images in terms of the codenook-indices of their encodings. More precisely, the quantized encoding of an image $x$ is given by $z_q=q(E(x)) \in \mathbb R^{x\times w\times n_z}$ and is equivalent to a sequence $s\in \\\{0, \cdots,|\mathcal Z|-1\\\}^{h\times w}$ of indices from the codebook, which is obtained by replacing each code by its index in the codebook $\mathcal Z$:
++ **Latent Transformers.** With $E$ and $G$ available, we can now represent images in terms of the codenook-indices of their encodings. More precisely, the quantized encoding of an image $x$ is given by $z_q=q(E(x)) \in \mathbb R^{x\times w\times n_z}$ and is equivalent to a sequence $s\in \\\{0, \cdots,\|\mathcal Z\|-1\\\}^{h\times w}$ of indices from the codebook, which is obtained by replacing each code by its index in the codebook $\mathcal Z$:
 
   
   $$
@@ -94,4 +94,4 @@ tags:   Vector_Quantization
   $$
 
   
-  If the conditioning information $c$ has spatial extent, we can learn another VQGAN to obtain again an index-based representation $r\in \\\{0,\cdots,|\mathcal Z_c|-1\\\}^{h_c\times w_c}$ with the newly obtained codebook $\mathcal Z_c$. And we can use the prepend $r$ and $s$ to restrict the output of the transformer.
+  If the conditioning information $c$ has spatial extent, we can learn another VQGAN to obtain again an index-based representation $r\in \\\{0,\cdots,\|\mathcal Z_c\|-1\\\}^{h_c\times w_c}$ with the newly obtained codebook $\mathcal Z_c$. And we can use the prepend $r$ and $s$ to restrict the output of the transformer.
