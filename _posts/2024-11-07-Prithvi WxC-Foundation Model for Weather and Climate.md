@@ -19,9 +19,13 @@ tags:   Climate
   + On the more technical side, a common problem is the size of the data. Masking is highly memory efficient.
 
 + In light of the forecast emulators ,which get the performance of a persistence forecast for free by not predictng $X_{t+\delta t}$ but the tendency $X_{t+\delta t}-X_t$, Prithvi WxC model the deviation from historical climate $C_t$ at the certain time.
+
+  
   $$
   \frac{\hat X_{t+\delta t}-C_{t+\delta t}}{\sigma_C}=f_{\theta}\left[M_{0.5}\left(\frac{X_t-\mu}{\sigma},\frac{X_{t-\delta\tau}-\mu}{\sigma}\right);\frac{C_{t+\delta t}-\mu}{\sigma},S,\delta t, \delta \tau\right]
   $$
+
+  
   Here, $\mu$ and $\sigma$ are per parameter means and standard deviations. $\sigma ^2_C=\sigma^2_C(X_t-C_t)$ is the variance of the historical anomaly. $S$ are static inputs and $\delta t$ and $\delta \tau$ are the time steps for the target and the inputs respectively.
 
 > Data
