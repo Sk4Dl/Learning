@@ -33,6 +33,6 @@ tags:   Climate
 
 + Prithvi WxC is a scalable and flexible 2D vision transformer. To keep it as flexible as possible, author aim not to use architecture elements that restrict to "rectangular" topologies for data. 
 
-![Prithvi WxC core architecture](C:\Users\Administrator\Desktop\Prithvi WxC core architecture.png)
+![Prithvi WxC core architecture](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/Prithvi%20WxC%20core%20architecture.png)
 
 + The data can take the shape (windows, tokens, features). The model alternates attention within a windows and across windows by transposing the window and token dimension between transformer layers.
