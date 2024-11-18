@@ -12,7 +12,7 @@ tags:   Computer_Vision
 
 > Method
 
-![The architecture of a Swin Transformer](C:\Users\Administrator\Desktop\The architecture of a Swin Transformer.png)
+![The architecture of a Swin Transformer](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/The%20architecture%20of%20a%20Swin%20Transformer.png)
 
 + **Self-attention in non-overlapped windows.** The windows are arranged to evenly partition the image in a non-overlapping manner. Supposing each window contains $M × M$ patches, the computational complexity of a global MSA module and a window based one on an image of $h\times w$ patches are:
   $$
@@ -21,7 +21,7 @@ tags:   Computer_Vision
   $$
   where the former is quadratic to patch number $hw$, and the latter is linear when $M$ is fixed. Global self-attention computation is generally unaffordable for large $hw$​, while the window based self-attention is scalable.
 
-+ **Shifted window partitioning in successive blocks.** To introduce cross-window connections while maintaining the efficient computation of non-overlapping windows, author proposes a shifted window partitioning approach which alternates between two partitioning configurations in consecutive Swin Transformer blocks.![shift window](C:\Users\Administrator\Desktop\shift window.png)
++ **Shifted window partitioning in successive blocks.** To introduce cross-window connections while maintaining the efficient computation of non-overlapping windows, author proposes a shifted window partitioning approach which alternates between two partitioning configurations in consecutive Swin Transformer blocks.![shift window](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/Swin%20Transformer%20shift%20window.png)
 
   With the shifted window partitioning approach, consecutive Swin Transformer blocks are computed as
   $$
