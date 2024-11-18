@@ -16,8 +16,10 @@ tags:   Computer_Vision
 
 + **Self-attention in non-overlapped windows.** The windows are arranged to evenly partition the image in a non-overlapping manner. Supposing each window contains $M × M$ patches, the computational complexity of a global MSA module and a window based one on an image of $h\times w$ patches are:
   $$
-  \Omega(MSA)=4hwC^2+2(hw)^2C,\\
-  \Omega(W\text{-}MSA)=4hwC^2+2M^2hwC
+  \begin{align}
+  \Omega(MSA)&=4hwC^2+2(hw)^2C,\\
+  \Omega(W\text{-}MSA)&=4hwC^2+2M^2hwC
+  \end{align}
   $$
   where the former is quadratic to patch number $hw$, and the latter is linear when $M$ is fixed. Global self-attention computation is generally unaffordable for large $hw$​, while the window based self-attention is scalable.
 
