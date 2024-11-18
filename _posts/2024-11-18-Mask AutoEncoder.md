@@ -18,7 +18,7 @@ tags:   Computer_Vision
 
 > Method
 
-![MAE architecture](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/MAE architecture.png))
+![MAE architecture](https://raw.githubusercontent.com/Sk4Dl/Learning/refs/heads/master/images/MAE architecture.png)
 
 + **Masking.** Divide an image into regular non-overlapping patches. And than sampling a subset of patched(the scale of the subset is desided by the **mask ratio**) and mask(i.e., **remove**) the remaining patches. The sampling strategy author used is straightforward: **random sampling**.
 + **MAE encoder.** The encoder is a ViT but applied only on *visible, unmasked patches*. Because the masked patches are dropped, the encoder only operates on a small subset(e.g., 25%) of the full set, this allows us to train large encoders with only a fraction of compute and memory.
